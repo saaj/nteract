@@ -1,12 +1,10 @@
 name: Build desktop app release
 on:
-  schedule:
-    - cron: "0 0 * * 0"
   workflow_dispatch:
 
 jobs:
   test:
-    runs-on: macos-11
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -14,9 +12,8 @@ jobs:
           node-version: '14'
       - name: Build desktop app
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
-          NODE_OPTIONS: "--max_old_space_size=8096"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_OPTIONS: "--max_old_space_size=8192"
         run: |
           yarn
           yarn verifyBeforePublish

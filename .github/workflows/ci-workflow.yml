@@ -2,16 +2,16 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
-  
+    branches: [ master ]
+
   # Allows manual run of workflow
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -50,7 +50,6 @@ jobs:
 
     - name: Build all packages
       run: yarn run build:all:ci
-  
+
     - name: Run tests
       run: yarn test
-  
