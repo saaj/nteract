@@ -17,5 +17,5 @@ jobs:
         run: |
           yarn
           yarn verifyBeforePublish
-          yarn dist:all
+          yarn dist
           yarn ship:desktop
