@@ -114,7 +114,7 @@
         "StartupNotify": "true",
         "Terminal": "false",
         "Type": "Application",
-        "Categories": "Science;Development;"
+        "Categories": "Development;"
       },
       "category": "Science",
       "packageCategory": "editors"
