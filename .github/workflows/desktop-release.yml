@@ -18,4 +18,4 @@ jobs:
           yarn
           yarn verifyBeforePublish
           yarn dist
-          yarn ship:desktop
+          yarn ship:one
